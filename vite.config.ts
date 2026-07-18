@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
-
+import svgr from 'vite-plugin-svgr'
 // https://vite.dev/config/
 export default defineConfig({
-   plugins: [react()],
+   plugins: [react(), svgr()],
    resolve: {
       alias: {
          '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
@@ -13,20 +13,12 @@ export default defineConfig({
 
          '@shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
          '@api': fileURLToPath(new URL('./src/shared/api', import.meta.url)),
-         '@config': fileURLToPath(
-            new URL('./src/shared/config', import.meta.url),
-         ),
-         '@hooks': fileURLToPath(
-            new URL('./src/shared/hooks', import.meta.url),
-         ),
+         '@config': fileURLToPath(new URL('./src/shared/config', import.meta.url)),
+         '@hooks': fileURLToPath(new URL('./src/shared/hooks', import.meta.url)),
 
-         '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
-         '@images': fileURLToPath(
-            new URL('./src/assets/images', import.meta.url),
-         ),
-         '@icons': fileURLToPath(
-            new URL('./src/assets/icons', import.meta.url),
-         ),
+         '@assets': fileURLToPath(new URL('./src/shared/assets', import.meta.url)),
+         '@images': fileURLToPath(new URL('./src/shared/assets/images', import.meta.url)),
+         '@icons': fileURLToPath(new URL('./src/shared/assets/icons', import.meta.url)),
 
          '@styles': fileURLToPath(new URL('./src/app/styles', import.meta.url)),
          '@': fileURLToPath(new URL('./src', import.meta.url)),

@@ -15,14 +15,14 @@ body {
    flex-direction: column;
    min-height: 100dvh;
    color: var(--base-color);
-   font-size: var(--base-font-size);
    font-family: var(--base-font-family);
+   font-size: var(--base-font-size);
 
    main,
    #root {
       display: flex;
-      flex-grow: 1;
       flex-direction: column;
+      flex-grow: 1;
    }
 }
 
@@ -33,27 +33,6 @@ a {
       text-decoration: none;
    }
 }
-
-// :focus-visible {
-//   outline: rem(2) dashed var(--color-light);
-//   outline-offset: rem(4);
-//   transition-duration: 0s !important;
-// }
-
-// #smooth-wrapper {
-//    overflow: hidden;
-// }
-
-// #smooth-content {
-//    position: relative;
-//    width: 100%;
-//    overflow: visible;
-// }
-
-// body.no-scroll #smooth-wrapper {
-//    height: 100dvh;
-//    overflow: hidden;
-// }
 
 body {
    background-color: var(--white);

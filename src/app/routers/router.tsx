@@ -1,12 +1,16 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+// libs
+import { createBrowserRouter } from 'react-router-dom'
 
+// configs
+import { ROUTES } from './config/routes'
+
+// components
 import { BaseLayout } from '../layouts/BaseLayout'
 import { HomePage } from '@/pages/Home'
-import { ROUTES } from '@shared/config/routes'
 import { CarPage } from '@pages/CarPage'
 import { NotFound } from '@pages/NotFound'
 
-const router = createBrowserRouter([
+export const appRouter = createBrowserRouter([
    {
       element: <BaseLayout />,
       path: '/',
@@ -16,17 +20,13 @@ const router = createBrowserRouter([
             element: <HomePage />,
          },
          {
-            path: ROUTES.CarDetails,
+            path: `${ROUTES.CarDetails}:carId`,
             element: <CarPage />,
          },
          {
             path: '*',
-            element: <NotFound></NotFound>,
+            element: <NotFound />,
          },
       ],
    },
 ])
-
-export const AppRouter = () => {
-   return <RouterProvider router={router} />
-}

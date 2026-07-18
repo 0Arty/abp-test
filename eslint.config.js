@@ -48,6 +48,14 @@ export default [
          ...jsxA11y.configs.recommended.rules,
 
          'react/prop-types': 'off',
+         'react/self-closing-comp': [
+            'warn',
+            {
+               component: true,
+               html: true,
+            },
+         ],
+
          'no-unused-vars': 'warn',
          'no-undef': 'warn',
          'no-console': 'warn',

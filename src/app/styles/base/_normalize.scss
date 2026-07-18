@@ -3,11 +3,9 @@
 *,
 ::before,
 ::after {
-   -webkit-box-sizing: border-box;
-   -moz-box-sizing: border-box;
-   box-sizing: border-box;
    margin: 0;
    padding: 0;
+   box-sizing: border-box;
 }
 
 :where(ul, ol):where([class]) {
@@ -36,7 +34,7 @@ html,
 }
 
 html {
-   @media screen and (max-width: rem(768)) {
+   @media screen and (width <= rem(768)) {
       scroll-behavior: auto;
    }
 }
@@ -45,7 +43,7 @@ p {
    margin-block: 0;
 }
 
-p:where(:not([class]):not(:last-child)) {
+p:where(:not([class], :last-child)) {
    // базовий відступ знизу для параграфу, який не має класу і не є останнім
    //   margin-bottom: var(--paragraphMarginBottom);
 }
@@ -67,23 +65,20 @@ textarea,
 select,
 button {
    border: none;
-   outline: none;
    font: inherit;
    cursor: pointer;
+   outline: none;
 }
 
 button {
    border: none;
-   outline: none;
    background-color: transparent;
+   outline: none;
 }
 
 button,
 label {
    cursor: pointer;
-}
-
-a {
 }
 
 svg * {
@@ -92,8 +87,8 @@ svg * {
 
 button {
    border: none;
-   outline: none;
    background-color: transparent;
+   outline: none;
 }
 
 // відключаємо анімації, для людей які їх не бажають
@@ -112,7 +107,7 @@ body,
 html {
    scroll-behavior: auto;
 
-   @media screen and (max-width: 768px) {
+   @media screen and (width <= 768px) {
       -webkit-overflow-scrolling: auto !important;
       overscroll-behavior: none;
    }

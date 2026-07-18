@@ -1,5 +1,10 @@
 import { AppRouter } from '@app/routers'
+import { QueryProvider } from '@app/providers'
 
 export const App = () => {
-   return <AppRouter />
+   return (
+      <QueryProvider>
+         <AppRouter />
+      </QueryProvider>
+   )
 }
