@@ -1,3 +1,4 @@
 export const ROUTES = {
-   home: '/',
+   HOME: '/',
+   CarDetails: 'cars/:cardId',
 } as const

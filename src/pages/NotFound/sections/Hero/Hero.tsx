@@ -1,9 +1,10 @@
 import styles from './Hero.module.scss'
 
-export const Hero = () => {
-   return (
+interface IProps {}
+
+export const Hero = ({}:IProps) => {
+  return (
       <div className={styles.root}>
-         <h1>asdasd</h1>
       </div>
-   )
+  )
 }

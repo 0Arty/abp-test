@@ -1,0 +1,1 @@
+export {CarPageHero} from './CarPageHero'

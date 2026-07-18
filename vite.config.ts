@@ -14,18 +14,18 @@ export default defineConfig({
          '@shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
          '@api': fileURLToPath(new URL('./src/shared/api', import.meta.url)),
          '@config': fileURLToPath(
-            new URL('./src/shared/config', import.meta.url)
+            new URL('./src/shared/config', import.meta.url),
          ),
          '@hooks': fileURLToPath(
-            new URL('./src/shared/hooks', import.meta.url)
+            new URL('./src/shared/hooks', import.meta.url),
          ),
 
          '@assets': fileURLToPath(new URL('./src/assets', import.meta.url)),
          '@images': fileURLToPath(
-            new URL('./src/assets/images', import.meta.url)
+            new URL('./src/assets/images', import.meta.url),
          ),
          '@icons': fileURLToPath(
-            new URL('./src/assets/icons', import.meta.url)
+            new URL('./src/assets/icons', import.meta.url),
          ),
 
          '@styles': fileURLToPath(new URL('./src/app/styles', import.meta.url)),

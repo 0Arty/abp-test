@@ -3,14 +3,25 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { BaseLayout } from '../layouts/BaseLayout'
 import { HomePage } from '@/pages/Home'
 import { ROUTES } from '@shared/config/routes'
+import { CarPage } from '@pages/CarPage'
+import { NotFound } from '@pages/NotFound'
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
    {
       element: <BaseLayout />,
+      path: '/',
       children: [
          {
-            path: ROUTES.home,
+            index: true,
             element: <HomePage />,
+         },
+         {
+            path: ROUTES.CarDetails,
+            element: <CarPage />,
+         },
+         {
+            path: '*',
+            element: <NotFound></NotFound>,
          },
       ],
    },
