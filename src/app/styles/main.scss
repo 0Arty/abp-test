@@ -1,0 +1,9 @@
+@use '@styles/base/normalize';
+@use '@styles/base/fonts';
+@use '@styles/base/globals';
+
+#root {
+   height: 100dvh;
+   width: 100%;
+   background-color: red;
+}
