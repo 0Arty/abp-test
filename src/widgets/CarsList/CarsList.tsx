@@ -1,5 +1,5 @@
-import { CarCard } from '@/entities/car/ui/CarCard'
 import styles from './CarsList.module.scss'
+import { CarCard } from '@/entities/car/ui/CarCard'
 import { useCars } from '@/entities/car'
 import type { Car } from '@/entities/car/model/types/car'
 

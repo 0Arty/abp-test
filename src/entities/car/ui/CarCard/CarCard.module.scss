@@ -12,26 +12,16 @@
       0.3s ease-out transform,
       0.3s ease-out scale;
 
-   @include animation-on-hover {
-      transform: translateY(-0.25rem);
-      scale: 1.01;
+   &:has(.imgContainer:hover, .moreInfo:hover) {
+      @include animation-on-hover {
+         transform: translateY(-0.25rem);
+         scale: 1.01;
 
-      .fakeBtn {
-         background-color: var(--red);
+         .moreInfo {
+            background-color: var(--red);
+         }
       }
    }
-}
-
-.imgContainer {
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-}
-
-.details {
-   display: flex;
-   flex-direction: column;
-   gap: rem(8);
 
    .carModel {
       display: flex;
@@ -46,15 +36,54 @@
          @include h4;
       }
    }
+}
+
+.imgContainer {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.details {
+   display: flex;
+   flex-direction: column;
+   gap: rem(8);
+   margin-bottom: rem(40);
 
    > p {
       @include body-m;
 
       color: var(--black-64);
    }
+
+   .rating-price {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.25rem 2rem;
+      width: 100%;
+
+      .price {
+         @include h4;
+
+         padding: rem(4) rem(8);
+         border-radius: 100px;
+         background-color: var(--accent);
+      }
+
+      .rating {
+         display: flex;
+         gap: rem(4);
+         width: fit-content;
+
+         @include h4;
+      }
+   }
 }
 
-.fakeBtn {
+.moreInfo {
    display: flex;
    flex-grow: 0;
    justify-content: center;

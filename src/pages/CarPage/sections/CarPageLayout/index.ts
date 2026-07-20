@@ -1,0 +1,1 @@
+export {CarPageLayout} from './CarPageLayout'

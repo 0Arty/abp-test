@@ -1,5 +1,5 @@
 import styles from './OurCars.module.scss'
-import { CarsList } from '@pages/Home/sections/OurCars/CarsList'
+import { CarsList } from '@/widgets/CarsList'
 
 export const OurCars = () => {
    return (

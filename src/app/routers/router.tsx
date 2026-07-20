@@ -20,7 +20,7 @@ export const appRouter = createBrowserRouter([
             element: <HomePage />,
          },
          {
-            path: `${ROUTES.CarDetails}:carId`,
+            path: `${ROUTES.CarDetails}:vehicleId`,
             element: <CarPage />,
          },
          {

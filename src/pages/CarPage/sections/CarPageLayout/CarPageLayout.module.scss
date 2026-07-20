@@ -1,0 +1,41 @@
+.root {
+   display: flex;
+   flex-direction: column;
+   gap: rem(40);
+   margin-top: rem(40);
+
+   .title {
+      display: flex;
+      flex-direction: column;
+
+      @include wrapper;
+   }
+
+   .back {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--black-100);
+      transition: 0.3s ease-out all;
+
+      .text {
+         @include h4;
+
+         color: inherit;
+         transition: inherit;
+      }
+
+      svg {
+         color: inherit;
+         transition: inherit;
+
+         [stroke] {
+            stroke: currentcolor;
+         }
+      }
+
+      @include animation-on-hover {
+         color: var(--accent);
+      }
+   }
+}

@@ -1,8 +1,15 @@
-import type { Car } from '@/entities/car/model/types/car'
 import styles from './CarCard.module.scss'
+
+// types
+import type { Car } from '@/entities/car/model/types/car'
+
+// libs
 import { ROUTES } from '@app/routers/config/routes'
 import { Link } from 'react-router-dom'
-import ArrowRight from '@icons/arrow-right.svg?react'
+
+// icons
+import ArrowRightIcon from '@icons/arrow-right.svg?react'
+import RatingStarIcon from '@icons/rating-star.svg?react'
 
 interface IProps {
    data: Car
@@ -12,24 +19,31 @@ export const CarCard = ({ data }: IProps) => {
    const detailsPath = `${ROUTES.CarDetails}/${data.id}`
 
    return (
-      <Link to={detailsPath} className={styles.root}>
-         <div className={styles.imgContainer}>
-            <img src={data.image} alt={data.brand} />
+      <div className={styles.root}>
+         <div className={styles.carModel}>
+            <h3>{data.title}</h3>
+            <h4>{data.brand}</h4>
          </div>
+         <Link to={detailsPath} className={styles.imgContainer}>
+            <img src={data.image} alt={data.brand} />
+         </Link>
 
          <div className={styles.details}>
-            <div className={styles.carModel}>
-               <h3>{data.title}</h3>
-               <h4>{data.brand}</h4>
+            <div className={styles['rating-price']}>
+               <p className={styles.price}>{data.price}$</p>
+               <div className={styles.rating}>
+                  <p>Rating:</p>
+                  {data.rating}
+               </div>
             </div>
 
             <p>{data.description}</p>
          </div>
 
-         <div className={styles.fakeBtn}>
+         <Link to={detailsPath} className={styles.moreInfo}>
             More
-            <ArrowRight />
-         </div>
-      </Link>
+            <ArrowRightIcon />
+         </Link>
+      </div>
    )
 }
