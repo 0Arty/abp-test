@@ -7,7 +7,7 @@ export const BaseLayout = () => {
          <main>
             <Outlet />
          </main>
-         <Footer></Footer>
+         <Footer />
       </>
    )
 }
