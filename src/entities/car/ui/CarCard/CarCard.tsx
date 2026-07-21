@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom'
 
 // icons
 import ArrowRightIcon from '@icons/arrow-right.svg?react'
-import RatingStarIcon from '@icons/rating-star.svg?react'
 import { Rating } from '@shared/ui/Rating'
 
 interface IProps {

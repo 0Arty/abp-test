@@ -1,6 +1,8 @@
-import type { Review } from '@/entities/review'
 import styles from './CarReviews.module.scss'
+
+import type { Review } from '@/entities/review'
 import { ReviewCard } from '@/entities/review/ui/ReviewCard'
+
 import { useReviews } from '@features/add-review'
 
 interface IProps {

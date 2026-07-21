@@ -1,13 +1,14 @@
-import { CarSlider } from '@shared/ui/CarSlider'
 import styles from './CarDetails.module.scss'
+
+import { CarReviews } from '@/widgets/CarReviews'
+
+import { AddReviewForm } from '@features/add-review/ui/AddReviewForm'
 import { useOneCar } from '@/entities/car'
 
+import { CarSlider } from '@shared/ui/CarSlider'
 import { ErrorMesage } from '@shared/ui/ErrorMesage'
 import { NotFound } from '@shared/ui/NotFound'
-import { useEffect } from 'react'
 import { DetailBlock } from '@shared/ui/DetailBlock'
-import { CarReviews } from '@/widgets/CarReviews'
-import { AddReviewForm } from '@features/add-review/ui/AddReviewForm'
 import { Rating } from '@shared/ui/Rating'
 
 interface IProps {
@@ -16,10 +17,6 @@ interface IProps {
 
 export const CarDetails = ({ vehicleId }: IProps) => {
    const { data, isLoading, error } = useOneCar(vehicleId)
-
-   useEffect(() => {
-      console.log(data)
-   }, [data])
 
    if (isLoading) return <div>Loading...</div>
    if (error) return <ErrorMesage>{'Error loading cars'}</ErrorMesage>

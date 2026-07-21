@@ -1,7 +1,6 @@
 import styles from './ReviewCard.module.scss'
 import type { Review } from '../../model/types/review'
 import UserAvatarIcon from '@icons/person.svg?react'
-import { useEffect } from 'react'
 import { Rating } from '@shared/ui/Rating'
 
 interface IProps {
@@ -9,10 +8,6 @@ interface IProps {
 }
 
 export const ReviewCard = ({ data }: IProps) => {
-   useEffect(() => {
-      console.log(data)
-   }, [data])
-
    return (
       <div className={styles.root}>
          <div className={styles.head}>

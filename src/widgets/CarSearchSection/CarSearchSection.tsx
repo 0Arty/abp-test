@@ -1,9 +1,8 @@
 import styles from './CarSearchSection.module.scss'
 
+import { CarsList } from '@/widgets/CarsList'
 import { useCarSearch, CarSearch } from '@features/car-search'
 import { useCars } from '@/entities/car'
-
-import { CarsList } from '@/widgets/CarsList'
 import { ErrorMesage } from '@shared/ui/ErrorMesage'
 
 export const CarSearchSection = () => {
