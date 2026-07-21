@@ -1,9 +1,9 @@
 import styles from './CarDetails.module.scss'
 
-import { CarReviews } from '@/widgets/CarReviews'
+import { CarReviews } from '@widgets/CarReviews'
 
 import { AddReviewForm } from '@features/add-review/ui/AddReviewForm'
-import { useOneCar } from '@/entities/car'
+import { useOneCar } from '@entities/car'
 
 import { CarSlider } from '@shared/ui/CarSlider'
 import { ErrorMesage } from '@shared/ui/ErrorMesage'

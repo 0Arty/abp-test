@@ -1,4 +1,4 @@
-import { CarSearchSection } from '@/widgets/CarSearchSection'
+import { CarSearchSection } from '@widgets/CarSearchSection'
 import styles from './OurCars.module.scss'
 
 export const OurCars = () => {

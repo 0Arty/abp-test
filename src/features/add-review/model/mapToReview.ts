@@ -1,4 +1,4 @@
-import { type Review } from '@/entities/review'
+import { type Review } from '@entities/review'
 import { type ReviewFormData } from './schema'
 
 export const mapToReview = (data: ReviewFormData): Review => {

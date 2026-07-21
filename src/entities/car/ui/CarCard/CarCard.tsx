@@ -1,7 +1,7 @@
 import styles from './CarCard.module.scss'
 
 // types
-import type { Car } from '@/entities/car/model/types/car'
+import type { Car } from '@entities/car'
 
 // libs
 import { ROUTES } from '@app/routers/config/routes'

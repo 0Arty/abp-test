@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { CarDetails } from '@/widgets/CarDetails'
+import { CarDetails } from '@widgets/CarDetails'
 import { CarPageLayout } from './sections/CarPageLayout'
 
 export const CarPage = () => {

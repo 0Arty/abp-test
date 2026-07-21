@@ -1,4 +1,4 @@
-import type { Review } from '@/entities/review'
+import type { Review } from '@entities/review'
 import { useEffect, useState } from 'react'
 
 export const useReviews = (carId: number) => {

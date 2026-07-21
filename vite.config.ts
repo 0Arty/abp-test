@@ -2,16 +2,23 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
 import svgr from 'vite-plugin-svgr'
+
+const isProd = process.env.NODE_ENV === 'production'
+const base = isProd && process.env.GITHUB_REPOSITORY ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/` : '/'
+
 // https://vite.dev/config/
 export default defineConfig({
    plugins: [react(), svgr()],
-   base: '/YOUR_REPO_NAME/',
+   base,
+
    resolve: {
       alias: {
          '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
          '@pages': fileURLToPath(new URL('./src/pages', import.meta.url)),
          '@features': fileURLToPath(new URL('./src/features', import.meta.url)),
+         '@entities': fileURLToPath(new URL('./src/entities', import.meta.url)),
 
+         '@widgets': fileURLToPath(new URL('./src/widgets', import.meta.url)),
          '@shared': fileURLToPath(new URL('./src/shared', import.meta.url)),
          '@api': fileURLToPath(new URL('./src/shared/api', import.meta.url)),
          '@config': fileURLToPath(new URL('./src/shared/config', import.meta.url)),

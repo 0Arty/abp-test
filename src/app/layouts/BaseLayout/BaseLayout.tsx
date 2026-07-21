@@ -1,4 +1,4 @@
-import { Footer } from '@/widgets/Footer/Footer'
+import { Footer } from '@widgets/Footer/Footer'
 import { Outlet } from 'react-router-dom'
 
 export const BaseLayout = () => {

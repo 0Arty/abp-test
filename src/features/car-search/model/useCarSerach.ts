@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import type { Car } from '@/entities/car'
+import type { Car } from '@entities/car'
 
 export const useCarSearch = (cars: Car[] | undefined) => {
    const [search, setSearch] = useState('')

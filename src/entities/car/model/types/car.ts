@@ -1,4 +1,4 @@
-import type { CarDto } from '@/entities/car/model/types/car-api'
+import type { CarDto } from '@entities/car/model/types/car-api'
 
 export interface Car {
    id: number

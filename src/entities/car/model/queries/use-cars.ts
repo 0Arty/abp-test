@@ -1,8 +1,7 @@
-import type { Car } from '@/entities/car'
 import { useQuery } from '@tanstack/react-query'
 import { getCars } from '../../api/getCars'
 import { getOneCar } from '../../api/getOneCar'
-import type { CarDetails } from '@/entities/car/model/types/car'
+import type { CarDetails, Car } from '@entities/car'
 
 export const useCars = () => {
    return useQuery<Car[]>({

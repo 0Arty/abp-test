@@ -1,5 +1,5 @@
 import styles from './CarsList.module.scss'
-import { type Car, CarCard } from '@/entities/car'
+import { type Car, CarCard } from '@entities/car'
 
 interface Props {
    list: Car[]
