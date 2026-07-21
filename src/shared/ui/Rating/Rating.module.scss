@@ -1,0 +1,23 @@
+.root {
+   display: flex;
+   gap: 4px;
+}
+
+.star {
+   position: relative;
+   width: 16px;
+   height: 16px;
+}
+
+.empty {
+   opacity: 0.3;
+   filter: brightness(0.5) contrast(0.2);
+}
+
+.fill {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   overflow: hidden;
+}

@@ -14,9 +14,13 @@ export const CarReviews = ({ apiReviews, carId }: IProps) => {
    const latestThree = mergedReviews.slice(-3).reverse()
    return (
       <div className={styles.root}>
-         {latestThree.map(review => (
-            <ReviewCard data={review} key={`Review-${carId}-${review.reviewerName}`} />
-         ))}
+         <h2>Reviews</h2>
+
+         <div className={styles.list}>
+            {latestThree.map(review => (
+               <ReviewCard data={review} key={`Review-${carId}-${review.reviewerName}`} />
+            ))}
+         </div>
       </div>
    )
 }

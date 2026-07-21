@@ -1,8 +1,19 @@
 .root {
    display: grid;
    gap: var(--col-gap);
-
-   //    grid-template-columns: repeat(4, 1fr);
-   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+   grid-template-columns: repeat(4, 1fr);
    width: 100%;
+
+   @media screen and (width <= rem(1220)) {
+      grid-template-columns: repeat(3, 1fr);
+   }
+
+   @media screen and (width <= rem(1024)) {
+      grid-template-columns: repeat(2, 1fr);
+   }
+
+   @media screen and (width <= rem(540)) {
+      display: flex;
+      flex-direction: column;
+   }
 }

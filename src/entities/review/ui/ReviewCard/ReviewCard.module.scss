@@ -1,3 +1,45 @@
-.root{
+.root {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   padding: rem(24);
+   border: 1px solid var(--black-100);
+   border-radius: 0.5rem;
 
+   .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+   }
+
+   .user {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+
+      h3 {
+         @include body-l;
+      }
+
+      .userIcon {
+         display: flex;
+         flex-direction: column;
+         flex-shrink: 0;
+         justify-content: end;
+         align-items: center;
+         width: rem(24);
+         height: rem(24);
+         border: 1px solid var(--black-100);
+         border-radius: 100%;
+         overflow: hidden;
+      }
+   }
+
+   .review--container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+   }
 }

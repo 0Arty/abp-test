@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom'
 // icons
 import ArrowRightIcon from '@icons/arrow-right.svg?react'
 import RatingStarIcon from '@icons/rating-star.svg?react'
+import { Rating } from '@shared/ui/Rating'
 
 interface IProps {
    data: Car
@@ -31,10 +32,8 @@ export const CarCard = ({ data }: IProps) => {
          <div className={styles.details}>
             <div className={styles['rating-price']}>
                <p className={styles.price}>{data.price}$</p>
-               <div className={styles.rating}>
-                  <p>Rating:</p>
-                  {data.rating}
-               </div>
+
+               <Rating rating={data.rating} />
             </div>
 
             <p>{data.description}</p>

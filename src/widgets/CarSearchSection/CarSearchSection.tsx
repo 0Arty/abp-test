@@ -5,7 +5,6 @@ import { useCars } from '@/entities/car'
 
 import { CarsList } from '@/widgets/CarsList'
 import { ErrorMesage } from '@shared/ui/ErrorMesage'
-import { NotFound } from '@shared/ui/NotFound'
 
 export const CarSearchSection = () => {
    const { data, isLoading, error } = useCars()

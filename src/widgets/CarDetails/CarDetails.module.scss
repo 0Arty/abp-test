@@ -44,6 +44,22 @@
    .details--container {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: rem(80);
+
+      .title {
+         h1 {
+            @include h2;
+         }
+
+         h2 {
+            @include h3;
+         }
+      }
+
+      .detailsList {
+         display: flex;
+         flex-direction: column;
+         gap: rem(24);
+      }
    }
 }

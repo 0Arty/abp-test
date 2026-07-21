@@ -8,6 +8,7 @@ import { useEffect } from 'react'
 import { DetailBlock } from '@shared/ui/DetailBlock'
 import { CarReviews } from '@/widgets/CarReviews'
 import { AddReviewForm } from '@features/add-review/ui/AddReviewForm'
+import { Rating } from '@shared/ui/Rating'
 
 interface IProps {
    vehicleId: string
@@ -38,39 +39,43 @@ export const CarDetails = ({ vehicleId }: IProps) => {
                <h2>{data.brand}</h2>
             </div>
 
-            <DetailBlock title={'Description'}>
-               <p>{data.description}</p>
-            </DetailBlock>
+            <div className={styles.detailsList}>
+               <DetailBlock title={'Description'}>
+                  <p>{data.description}</p>
+               </DetailBlock>
 
-            <DetailBlock title={'dimensions'}>
-               <table>
-                  <tr>
-                     <td>Width:</td>
-                     <td>{data.dimensions.width}</td>
-                  </tr>
+               <DetailBlock title={'Dimensions'}>
+                  <table>
+                     <thead />
+                     <tbody>
+                        <tr>
+                           <td>Width:</td>
+                           <td>{data.dimensions.width}</td>
+                        </tr>
 
-                  <tr>
-                     <td>Height:</td>
-                     <td>{data.dimensions.height}</td>
-                  </tr>
+                        <tr>
+                           <td>Height:</td>
+                           <td>{data.dimensions.height}</td>
+                        </tr>
 
-                  <tr>
-                     <td>Depth:</td>
-                     <td>{data.dimensions.depth}</td>
-                  </tr>
-               </table>
-            </DetailBlock>
+                        <tr>
+                           <td>Depth:</td>
+                           <td>{data.dimensions.depth}</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </DetailBlock>
 
-            <DetailBlock title={'Rating'}>
-               <p>{data.rating}</p>
-            </DetailBlock>
+               <DetailBlock title={'Rating'}>
+                  <Rating rating={data.rating} />
+               </DetailBlock>
 
-            <DetailBlock title={'Price'}>
-               <h3>{data.price}</h3>
-            </DetailBlock>
+               <DetailBlock title={'Price'}>
+                  <h3>{data.price}</h3>
+               </DetailBlock>
+            </div>
 
             <CarReviews apiReviews={data.reviews} carId={data.id} />
-
             <AddReviewForm carId={data.id} />
          </div>
       </div>
