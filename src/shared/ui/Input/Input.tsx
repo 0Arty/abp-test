@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styles from './Input.module.scss'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -6,14 +6,15 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
    error?: string
 }
 
-export const Input: React.FC<InputProps> = ({ label, error, className, ...props }) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ label, error, className, ...props }, ref) => {
    return (
       <div className={styles.container}>
          {label && <label className={styles.label}>{label}</label>}
 
-         <input className={`${styles.input} ${className || ''}`} {...props} />
+         <input ref={ref} className={`${styles.input} ${className || ''}`} {...props} />
 
          {error && <span className={styles.errorMessage}>{error}</span>}
       </div>
    )
-}
+})
+Input.displayName = 'Input'

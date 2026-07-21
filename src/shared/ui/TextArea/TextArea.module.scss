@@ -4,7 +4,8 @@
    gap: 0.25rem;
    width: 100%;
 
-   input {
+   textarea {
+      min-height: rem(120);
       padding: rem(12) rem(24);
       border: 1px solid var(--black-100);
 
@@ -27,7 +28,7 @@
    }
 
    &:has(.errorMessage) {
-      input {
+      textarea {
          color: var(--red);
          border-color: var(--red);
       }

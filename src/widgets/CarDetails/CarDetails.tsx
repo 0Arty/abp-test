@@ -7,6 +7,7 @@ import { NotFound } from '@shared/ui/NotFound'
 import { useEffect } from 'react'
 import { DetailBlock } from '@shared/ui/DetailBlock'
 import { CarReviews } from '@/widgets/CarReviews'
+import { AddReviewForm } from '@features/add-review/ui/AddReviewForm'
 
 interface IProps {
    vehicleId: string
@@ -68,7 +69,9 @@ export const CarDetails = ({ vehicleId }: IProps) => {
                <h3>{data.price}</h3>
             </DetailBlock>
 
-            <CarReviews reviews={data.reviews} />
+            <CarReviews apiReviews={data.reviews} carId={data.id} />
+
+            <AddReviewForm carId={data.id} />
          </div>
       </div>
    )
