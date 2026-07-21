@@ -8,7 +8,7 @@ import { ROUTES } from './config/routes'
 import { BaseLayout } from '../layouts/BaseLayout'
 import { HomePage } from '@/pages/Home'
 import { CarPage } from '@pages/CarPage'
-import { NotFound } from '@pages/NotFound'
+import { NotFoundPage } from '@pages/NotFound'
 
 export const appRouter = createBrowserRouter([
    {
@@ -25,7 +25,7 @@ export const appRouter = createBrowserRouter([
          },
          {
             path: '*',
-            element: <NotFound />,
+            element: <NotFoundPage />,
          },
       ],
    },

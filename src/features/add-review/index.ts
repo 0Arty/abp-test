@@ -1,3 +1,2 @@
-export { useAddReview } from './model/useAddReview'
-export { useGetReview } from './model/useGetReview'
+export { useReviews } from './model/useReviews'
 export { AddReviewForm } from './ui/AddReviewForm/AddReviewForm'

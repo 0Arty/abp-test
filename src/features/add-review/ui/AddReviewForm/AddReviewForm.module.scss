@@ -12,7 +12,7 @@
    }
 
    h3 {
-      @include h3;
+      @include h4;
    }
 
    .form {
@@ -20,5 +20,23 @@
       flex-direction: column;
       gap: 0.5rem;
       width: 100%;
+
+      .submit {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+         padding: rem(12) rem(24);
+         border: 1px solid transparent;
+         background-color: var(--accent);
+         color: var(--white);
+         transition: 0.3s ease-in-out all;
+
+         @include animation-on-hover {
+            background-color: transparent;
+            color: var(--accent);
+            border-color: var(--accent);
+         }
+      }
    }
 }

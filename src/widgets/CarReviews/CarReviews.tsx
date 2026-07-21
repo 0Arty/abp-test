@@ -1,7 +1,7 @@
 import type { Review } from '@/entities/review'
 import styles from './CarReviews.module.scss'
 import { ReviewCard } from '@/entities/review/ui/ReviewCard'
-import { useGetReview } from '@features/add-review/model/useGetReview'
+import { useReviews } from '@features/add-review'
 
 interface IProps {
    apiReviews: Review[]
@@ -9,7 +9,7 @@ interface IProps {
 }
 
 export const CarReviews = ({ apiReviews, carId }: IProps) => {
-   const { reviewList: localReviews } = useGetReview(carId)
+   const { reviews: localReviews } = useReviews(carId)
    const mergedReviews = [...apiReviews, ...localReviews]
    const latestThree = mergedReviews.slice(-3).reverse()
    return (

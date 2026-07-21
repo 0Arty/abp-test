@@ -7,7 +7,7 @@ import { TextArea } from '@/shared/ui/TextArea'
 import { RatingStars } from '@/shared/ui/RatingStars'
 
 import styles from './AddReviewForm.module.scss'
-import { useAddReview } from '@features/add-review/model/useAddReview'
+import { useReviews } from '@features/add-review/'
 import { mapToReview } from '@features/add-review/model/mapToReview'
 import { useState, type FormEvent } from 'react'
 
@@ -31,7 +31,7 @@ export const AddReviewForm = ({ carId }: Props) => {
       },
    })
 
-   const { addReview } = useAddReview(carId)
+   const { addReview } = useReviews(carId)
 
    const onSubmit = (data: ReviewFormData) => {
       const review = mapToReview(data)
@@ -69,7 +69,9 @@ export const AddReviewForm = ({ carId }: Props) => {
 
                <TextArea label="Your review" {...register('text')} error={errors.text?.message} />
 
-               <button type="submit">Add review</button>
+               <button type="submit" className={styles.submit}>
+                  Add review
+               </button>
             </form>
          </div>
       )
