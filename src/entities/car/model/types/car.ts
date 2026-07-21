@@ -1,3 +1,5 @@
+import type { CarDto } from '@/entities/car/model/types/car-api'
+
 export interface Car {
    id: number
    title: string
@@ -7,3 +9,5 @@ export interface Car {
    brand: string
    description: string
 }
+
+export interface CarDetails extends CarDto {}

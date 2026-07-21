@@ -1,0 +1,19 @@
+.error {
+   @include wrapper;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 0.25rem;
+
+   h3 {
+      @include h3;
+
+      text-align: center;
+   }
+
+   p {
+      @include body-m;
+   }
+}

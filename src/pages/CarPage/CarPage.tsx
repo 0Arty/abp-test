@@ -1,6 +1,6 @@
-import { CarDetails } from '@/widgets/CarDetails'
-import { CarPageLayout } from '@pages/CarPage/sections/CarPageLayout'
 import { useParams } from 'react-router-dom'
+import { CarDetails } from '@/widgets/CarDetails'
+import { CarPageLayout } from './sections/CarPageLayout'
 
 export const CarPage = () => {
    const { vehicleId } = useParams()

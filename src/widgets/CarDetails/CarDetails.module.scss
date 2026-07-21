@@ -1,7 +1,49 @@
 .root {
-   display: flex;
-   flex-direction: column;
-   width: 100%;
-
    @include wrapper;
+
+   display: grid;
+   gap: 1rem;
+   grid-template-columns: 1fr 1fr;
+
+   @include mobile {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .sticky--container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      width: 100%;
+      min-width: 0;
+
+      @include mobile {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .sticky--content {
+         position: sticky;
+         top: 1rem;
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         height: calc(100svh - (1rem * 2));
+         max-height: rem(710);
+
+         @include mobile {
+            position: initial;
+            top: unset;
+            height: auto;
+            aspect-ratio: 1/1;
+         }
+      }
+   }
+
+   .details--container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+   }
 }

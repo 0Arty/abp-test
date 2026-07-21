@@ -1,0 +1,36 @@
+.root {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   width: 100%;
+
+   h2 {
+      @include h4;
+
+      color: var(--black-64);
+   }
+
+   p {
+      @include body-m;
+   }
+
+   table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+         padding: rem(4) rem(12);
+         border: 1px solid var(--black-64);
+
+         &:first-child {
+            @include body-l;
+
+            // color: red;
+         }
+      }
+   }
+
+   h3 {
+      @include h3;
+   }
+}

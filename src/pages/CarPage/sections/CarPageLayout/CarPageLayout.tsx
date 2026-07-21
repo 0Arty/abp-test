@@ -1,6 +1,7 @@
-import type { ReactNode } from 'react'
 import styles from './CarPageLayout.module.scss'
+import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
+
 import { ROUTES } from '@app/routers/config/routes'
 
 import ArrowSvg from '@shared/assets/icons/arrow-left.svg?react'

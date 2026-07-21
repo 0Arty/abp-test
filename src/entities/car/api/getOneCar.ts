@@ -1,17 +1,17 @@
-import { type CarDto } from '../model/types/car-api'
-import { mapCar } from '../model/lib/map-car'
-
 export const getOneCar = async (carId: string) => {
-   const url = `https://dummyjson.com/products/${carId}`
-   const res = await fetch(url)
+   const res = await fetch(`https://dummyjson.com/products/${carId}`)
 
-   if (!res.ok) throw new Error('Error')
+   if (res.status === 404) return null
+   if (!res.ok) throw new Error('Network error')
 
    const response = await res.json()
 
-   // Ну взагалі по нормальному API мало б одразу фільтрувати категорії, а так можна написати запит на продукт з іншої категорії, тому тут далі йде прокид помилки, хтось захоче змінити руками url і відправиться запит
-   if (response.category !== 'vehicle') throw new Error('Product Not found')
+   if (response.category !== 'vehicle') return null
 
-   const data: CarDto = response
-   return mapCar(data)
+   try {
+      return response
+   } catch (e) {
+      console.error('mapCar crashed:', e)
+      throw e
+   }
 }

@@ -1,0 +1,109 @@
+.slider--container {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   width: 100%;
+}
+
+.slider {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   width: 100%;
+   border: 2px solid var(--black-100);
+   border-radius: 0.5rem;
+
+   .slide {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: rem(24);
+
+      .image {
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         margin: auto;
+         inset: 0;
+         object-fit: scale-down;
+         aspect-ratio: 1/1;
+      }
+   }
+}
+
+.controls {
+   position: absolute;
+   bottom: rem(0);
+   z-index: 2;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+
+   //    background-color: #fff;
+
+   .btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      color: var(--black-100);
+      transition: 0.3s ease-in-out all;
+
+      @include animation-on-hover {
+         color: var(--accent);
+      }
+
+      svg {
+         color: inherit;
+         transition: inherit;
+
+         [stroke] {
+            stroke: currentcolor;
+         }
+      }
+   }
+
+   .pagination {
+      display: flex;
+
+      //   width: 100%;
+      flex-grow: 1;
+      align-items: center;
+      gap: 0.25rem;
+
+      :global(.swiper-pagination-bullet) {
+         position: relative;
+         width: 100%;
+         height: 2px;
+         border: none;
+         border-radius: 1px;
+         background-color: transparent;
+         background-color: var(--black-64);
+         opacity: 1;
+
+         &::before {
+            position: absolute;
+            right: 0;
+            left: auto;
+            width: 0%;
+            height: 100%;
+            background: var(--accent);
+            transition: 0.3s ease-in-out width;
+            content: '';
+         }
+      }
+
+      :global(.swiper-pagination-bullet-active) {
+         &::before {
+            right: auto;
+            left: 0;
+            width: 100%;
+         }
+      }
+   }
+}

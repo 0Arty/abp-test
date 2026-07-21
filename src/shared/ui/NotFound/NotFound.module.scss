@@ -1,0 +1,35 @@
+.root {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+
+   @include wrapper;
+
+   .title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+
+      h2 {
+         @include h2;
+      }
+
+      h3 {
+         @include h3;
+      }
+   }
+
+   .link {
+      @include body-m;
+
+      text-decoration: underline;
+      transition: 0.3s ease-in-out all;
+
+      @include animation-on-hover {
+         color: var(--accent);
+      }
+   }
+}

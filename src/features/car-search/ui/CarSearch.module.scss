@@ -1,0 +1,35 @@
+.label {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   width: 100%;
+
+   .input {
+      display: flex;
+      width: 100%;
+      height: fit-content;
+      padding: rem(24) rem(40);
+      border: 2px solid var(--black-100);
+      border-radius: 0.5rem;
+      transition: 0.3s ease-in-out border-color;
+
+      @include h4;
+
+      @include animation-on-hover {
+         border-color: var(--accent);
+      }
+   }
+
+   &:has(.error) {
+      .input {
+         color: var(--red);
+         border-color: var(--red);
+      }
+   }
+
+   .error {
+      @include body-l;
+
+      color: var(--red);
+   }
+}

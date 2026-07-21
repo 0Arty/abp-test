@@ -1,20 +1,10 @@
 import styles from './CarsList.module.scss'
-import { CarCard } from '@/entities/car/ui/CarCard'
-import { useCars } from '@/entities/car'
-import type { Car } from '@/entities/car/model/types/car'
+import { type Car, CarCard } from '@/entities/car'
 
-export const CarsList = () => {
-   const { data, isLoading, error } = useCars()
+interface Props {
+   list: Car[]
+}
 
-   if (isLoading) return <div>Loading...</div>
-   if (error) return <div>Error loading cars</div>
-   if (!data?.length) return <div>No cars found</div>
-
-   return (
-      <div className={styles.root}>
-         {data.map((car: Car) => (
-            <CarCard data={car} key={car.id} />
-         ))}
-      </div>
-   )
+export const CarsList = ({ list }: Props) => {
+   return <div className={styles.root}>{!!list && list.map((car: Car) => <CarCard data={car} key={car.id} />)}</div>
 }

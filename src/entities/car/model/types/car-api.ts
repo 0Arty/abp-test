@@ -4,8 +4,30 @@ export interface CarDto {
    description: string
    price: number
    rating: number
-   thumbnail: string
    brand: string
+
+   discountPercentage: number
+
+   stock: number
+   dimensions: {
+      width: number
+      height: number
+      depth: number
+   }
+   warrantyInformation: string
+   shippingInformation: string
+   availabilityStatus: string
+
+   reviews: Array<{
+      rating: number
+      comment: string
+      date: string
+      reviewerName: string
+      reviewerEmail: string
+   }>
+
+   images: Array<string>
+   thumbnail: string
 }
 
 export interface CarsResponseDto {

@@ -1,7 +1,8 @@
+import type { Car } from '@/entities/car'
 import { useQuery } from '@tanstack/react-query'
 import { getCars } from '../../api/getCars'
-import type { Car } from '@/entities/car/model/types/car'
-import { getOneCar } from '@/entities/car/api/getOneCar'
+import { getOneCar } from '../../api/getOneCar'
+import type { CarDetails } from '@/entities/car/model/types/car'
 
 export const useCars = () => {
    return useQuery<Car[]>({
@@ -11,7 +12,7 @@ export const useCars = () => {
 }
 
 export const useOneCar = (id: string) => {
-   return useQuery<Car>({
+   return useQuery<CarDetails | null>({
       queryKey: ['cars', id],
       queryFn: () => getOneCar(id),
       enabled: !!id,
