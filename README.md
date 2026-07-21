@@ -1,69 +1,28 @@
-# React + TypeScript + Vite
+#Архітектура
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Виокристав архітектурний підхід FSD, хоч це й тестове завдання, але реальні проєкти мають властивість розширюватись і в майбутньому з такою структурою буде легше маштабуватись
 
-Currently, two official plugins are available:
+#Бібліотеки
+TanstackQuery - робота з АПІ + кешування запитів
+ReactHookForm - робота з формами
+Zod - валідація
+ReactRouterDom - навігація
+Swiper - карусель\слайдер
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##Homepage
+Головна сторінка містить всі блоки згідно ТЗ, я обрав варіант з пошуком, оскільки АПІ не має пошуку, то я зробив фільтр на стороні клієнту
 
-## Expanding the ESLint configuration
+- невеличка обробка помилок
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+##vehiclePage
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Якщо в url ввести id неіснуючого автомобіля, то ловлю цю помилку і видаю 404
+З мінусів, API немає власного пошуку по категорії, а має пошук по всім товарам, то довелось відфільтровувати по категорії.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Вивів тільки ключову інформацію (це якщо, хтось скаже, що мало інфо:) )
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+###Відгуки
+Я зробив доволі просто, показую останні 3 відгуки з урахуванням того, що на API відгуки додавались в 2025, то всі відгуки які знаходяться в LocalStorage будуть явно свіжішими, тому показуємо в приорітеті з нього.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Як це мало б бути - запит на сервер, і отримуємо з серверу необхідну кількість віжих відгуків.
+Ще - відгук додається, після валідації (якщо валідація не пройшла, то там будуть error з повідомленнями) та оновлення сторінки - бо localStorage не реактивний, а прокидувати контекст, або підключати state Manager - не краща ідея
