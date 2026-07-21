@@ -1,5 +1,6 @@
 // assets
 import styles from './Hero.module.scss'
+import HeroImage from '@images/hero-image-descktop.png'
 
 export const Hero = () => {
    return (
@@ -10,7 +11,7 @@ export const Hero = () => {
          </div>
 
          <div className={styles['image--container']}>
-            <img src="homepage/hero-image-descktop.png" alt="" className="" />
+            <img src={HeroImage} alt={'Porche'} className="" />
          </div>
       </div>
    )
