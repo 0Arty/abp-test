@@ -10,23 +10,28 @@ import { HomePage } from '@/pages/Home'
 import { CarPage } from '@pages/CarPage'
 import { NotFoundPage } from '@pages/NotFound'
 
-export const appRouter = createBrowserRouter([
+export const appRouter = createBrowserRouter(
+   [
+      {
+         element: <BaseLayout />,
+         path: '/',
+         children: [
+            {
+               index: true,
+               element: <HomePage />,
+            },
+            {
+               path: `${ROUTES.CarPage}/${ROUTES_ID.Car}`,
+               element: <CarPage />,
+            },
+            {
+               path: '*',
+               element: <NotFoundPage />,
+            },
+         ],
+      },
+   ],
    {
-      element: <BaseLayout />,
-      path: '/',
-      children: [
-         {
-            index: true,
-            element: <HomePage />,
-         },
-         {
-            path: `${ROUTES.CarPage}/${ROUTES_ID.Car}`,
-            element: <CarPage />,
-         },
-         {
-            path: '*',
-            element: <NotFoundPage />,
-         },
-      ],
+      basename: '/abp-test',
    },
-])
+)
