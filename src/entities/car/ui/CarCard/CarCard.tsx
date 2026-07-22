@@ -16,7 +16,7 @@ interface IProps {
 }
 
 export const CarCard = ({ data }: IProps) => {
-   const detailsPath = `${ROUTES.CarDetails}/${data.id}`
+   const detailsPath = `${ROUTES.CarPage}/${data.id}`
 
    return (
       <div className={styles.root}>

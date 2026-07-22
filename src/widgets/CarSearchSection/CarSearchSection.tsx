@@ -4,6 +4,7 @@ import { CarsList } from '@widgets/CarsList'
 import { useCarSearch, CarSearch } from '@features/car-search'
 import { useCars } from '@entities/car'
 import { ErrorMesage } from '@shared/ui/ErrorMesage'
+import { Loader } from '@shared/ui/Loader'
 
 export const CarSearchSection = () => {
    const { data, isLoading, error } = useCars()
@@ -11,7 +12,7 @@ export const CarSearchSection = () => {
    const { search, setSearch, filteredCars } = useCarSearch(data)
    const isEmpty = filteredCars.length === 0
 
-   if (isLoading) return <div>Loading...</div>
+   if (isLoading) return <Loader />
    if (error) return <ErrorMesage>{'Error loading cars'}</ErrorMesage>
 
    return (

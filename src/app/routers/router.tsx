@@ -2,7 +2,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 // configs
-import { ROUTES } from './config/routes'
+import { ROUTES, ROUTES_ID } from './config/routes'
 
 // components
 import { BaseLayout } from '../layouts/BaseLayout'
@@ -20,7 +20,7 @@ export const appRouter = createBrowserRouter([
             element: <HomePage />,
          },
          {
-            path: ROUTES.CarDetails,
+            path: `${ROUTES.CarPage}/${ROUTES_ID.Car}`,
             element: <CarPage />,
          },
          {

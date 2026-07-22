@@ -10,6 +10,7 @@ import { ErrorMesage } from '@shared/ui/ErrorMesage'
 import { NotFound } from '@shared/ui/NotFound'
 import { DetailBlock } from '@shared/ui/DetailBlock'
 import { Rating } from '@shared/ui/Rating'
+import { Loader } from '@shared/ui/Loader'
 
 interface IProps {
    vehicleId: string
@@ -18,7 +19,7 @@ interface IProps {
 export const CarDetails = ({ vehicleId }: IProps) => {
    const { data, isLoading, error } = useOneCar(vehicleId)
 
-   if (isLoading) return <div>Loading...</div>
+   if (isLoading) return <Loader />
    if (error) return <ErrorMesage>{'Error loading cars'}</ErrorMesage>
    if (!data) return <NotFound />
 
